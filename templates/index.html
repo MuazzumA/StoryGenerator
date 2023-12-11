@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Generator</title>
+</head>
+<body>
+    <h1>Story Generator</h1>
+    <form action="/generateStory" method="post">
+        <label for="genre">Enter a genre:</label>
+        <input type="text" id="genre" name="genre" required>
+        <button type="submit">Generate Story</button>
+    </form>
+    {% if genre %}
+        <h2>Generated Story for {{ genre.capitalize() }}:</h2>
+        <p>{{ generated_sentence }}</p>
+    {% endif %}
+</body>
+</html>
